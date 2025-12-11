@@ -1,4 +1,4 @@
-# Examples of fastapi
+# Examples of FastAPI, LangChain, and LangGraph
 
 ==============================================================================
 # Example 1: Basic FastAPI example
