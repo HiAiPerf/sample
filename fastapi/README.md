@@ -1,5 +1,30 @@
+# Examples of fastapi
+
+==============================================================================
+# Example 1: Basic FastAPI example
+# Source code myfastapi.py
 
 Install:
+
+$ conda create -n fastapi311 python=3.11
+
+$ conda activate fastapi311
+
+$ pip install -qU fastapi pydantic uvicorn
+
+How to use it:
+
+python myfastapi.py
+
+
+
+==============================================================================
+# Examle 2: FastAPI and LangGraph with Tool
+
+# Source code: graph.py server.py, ui.html
+
+Install:
+
 $ conda create -n langgraph311 python=3.11
 
 $ conda activate langgraph311
