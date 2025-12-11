@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LangGraph Chat UI</title>
+</head>
+<body>
+  <h2>Ask the Agent</h2>
+
+  <input id="q" style="width:300px" placeholder="Ask something…">
+  <button onclick="ask()">Send</button>
+
+  <pre id="out"></pre>
+
+<script>
+async function ask() {
+  const q = document.getElementById("q").value;
+  const out = document.getElementById("out");
+  out.textContent = "";
+
+  const response = await fetch(`/chat?query=${encodeURIComponent(q)}`);
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+
+  while (true) {
+    const { value, done } = await reader.read();
+    if (done) break;
+
+    const text = decoder.decode(value);
+    out.textContent += text;
+  }
+}
+</script>
+
+</body>
+</html>
